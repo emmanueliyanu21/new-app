@@ -34,7 +34,7 @@ describe('ArticleComponent', () => {
   });
 
   it('should fetch the single article', () => {
-    const mockArticle = { title: 'Sample Article', description: 'Sample Description', /* Add other properties */ };
+    const mockArticle = { title: 'Sample Article', description: 'Sample Description',  };
     // articleService.getArticle.and.returnValue(of(mockArticle));
 
     component.singleArticle();

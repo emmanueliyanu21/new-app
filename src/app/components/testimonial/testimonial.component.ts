@@ -75,13 +75,6 @@ export class TestimonialComponent {
     this.email = event.target.value;
   }
   
-  main: any = {
-    // Define your 'main' data here
-    data: [
-      // Add your data items here
-    ],
-  };
-
   handleValidationClick() {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+/;
     this.isValidEmail = emailPattern.test(this.submitEmail.value);

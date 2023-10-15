@@ -36,7 +36,6 @@ export class NewsComponent {
 
   getFilterItem(event:any){
     this.newsChannel = event;
-    console.log(event, 'lll')
     this.getAPICall()
   }
 }
