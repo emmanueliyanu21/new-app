@@ -1,0 +1,11 @@
+<div class="main-wrapper">
+    <app-header (newFilterEvent)="getFilterItem($event)"></app-header>
+    <div class="card-details" *ngIf="!isLoading && articles.length > 0">
+        <ng-container *ngFor="let article of articles">
+            <app-card [article]="article"></app-card>
+        </ng-container>
+    </div>
+    <app-preloader *ngIf="isLoading"></app-preloader>
+</div>
+<app-testimonial></app-testimonial>
+<app-footer></app-footer>

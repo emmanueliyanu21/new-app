@@ -1,0 +1,13 @@
+<div class="main-wrapper">
+    <app-header></app-header>
+    <div class="card-details" *ngIf="!isLoading">
+        <ng-container *ngIf="bookmarkedArticles && bookmarkedArticles.length > 0; else noBookMarked">
+          <app-card *ngFor="let article of bookmarkedArticles" [article]="article"></app-card>
+        </ng-container>
+      </div>
+      <ng-template #noBookMarked>
+        <p class="no-bookmark">No Bookmarked Article</p>
+      </ng-template>
+      <app-preloader *ngIf="isLoading"></app-preloader>
+</div>
+

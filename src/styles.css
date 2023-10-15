@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+:root {
+    --ff-main: "Mukta", sans-serif;
+    --clr-black: #000;
+    --clr-white: #fff;
+    --clr-red: rgb(204, 39, 39);
+    --clr-grey: #777;
+    --clr-blue: #0a2640;
+    --clr-light-grey: #f9f9f9;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--ff-main);
+    margin: 0;
+    padding: 0;
+}
+
+.main-wrapper {
+    height: 100%;
+    padding: 40px 50px;
+    background-color: var(--clr-red);
+    min-height: 100vh;
+}
+
+.card-details {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.container {
+    margin: 0 auto;
+    width: 93%;
+}
+
+@media screen and (max-width: 450px) {
+    .main-wrapper {
+        padding: 10px 10px !important;
+    }
+    .card-details {
+        justify-content: center;
+    }
+}

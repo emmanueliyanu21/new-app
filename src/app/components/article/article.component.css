@@ -1,0 +1,11 @@
+.single-article img {
+    width: 100%;
+}
+
+.article {
+    color: var(--clr-white);
+}
+
+.article a {
+    color: var(--clr-white);
+}

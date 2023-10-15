@@ -1,0 +1,67 @@
+<div class="AppWrapper">
+    <section>
+        <div class="cta-three container">
+            <img src={{blog.customer}} alt="cta" />
+            <div class="cta-three_content">
+                <h1>{{ blog.faq?.header }}</h1>
+                <div>
+                    <div class="cta-three_accordion" *ngFor="let item of blog.faq?.data; let index = index"
+                        (click)="toggleAccordion(index)">
+                        <span>
+                            <p>{{ item.text }}</p>
+                            <i class="icon">
+                                <div *ngIf="isExpanded[index]; else upChevron">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 12 12">
+                                        <path fill="currentColor"
+                                            d="M2.22 4.47a.75.75 0 0 1 1.06 0L6 7.19l2.72-2.72a.75.75 0 0 1 1.06 1.06L6.53 8.78a.75.75 0 0 1-1.06 0L2.22 5.53a.75.75 0 0 1 0-1.06Z" />
+                                    </svg>
+                                </div>
+                                <ng-template #upChevron>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 12 12">
+                                        <path fill="currentColor"
+                                            d="M2.22 7.53a.75.75 0 0 0 1.06 0L6 4.81l2.72 2.72a.75.75 0 0 0 1.06-1.06L6.53 3.22a.75.75 0 0 0-1.06 0L2.22 6.47a.75.75 0 0 0 0 1.06Z" />
+                                    </svg>
+                                </ng-template>
+                            </i>
+                        </span>
+                        <div class="accordion-content" *ngIf="isExpanded[index]">
+                            {{ blog.content }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="blog container">
+        <h6>{{ blog.header }}</h6>
+        <p>{{ blog.text }}</p>
+        <div class="blog_articles">
+            <article *ngFor="let item of blog.data; let index = index">
+                <img [src]="item.image" alt="blog1" />
+                <span>
+                    <p>{{ item.text }}</p>
+                    <p>{{ item.date }}</p>
+                </span>
+                <p>{{ item.details }}</p>
+                <span>
+                    <img [src]="item.imageMain" alt="harry" />
+                    <p>{{ item.user }}</p>
+                </span>
+            </article>
+        </div>
+        <button class="button-text">Load more</button>
+    </section>
+    <section class=" container">
+        <div class="email">
+            <h1>{{ blog.main?.header }}</h1>
+            <div class="email_form">
+                <form [formGroup]="submitEmail">
+                    <input class="email-input" type="email" placeholder="Your email address" formControlName="email"
+                        (ngModelChange)="handleEmailChange($event)" />
+                    <button class="email-button" (click)="handleValidationClick()">{{ blog.main?.text }}</button>
+                    <p *ngIf="!isValidEmail">Please enter a valid email address.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

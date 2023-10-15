@@ -1,0 +1,13 @@
+<div class="main-wrapper">
+    <app-header></app-header>
+    <div class="article">
+        <h2>{{ data.title }}</h2>
+        <p>{{ data.description }}</p>
+        <p> <span>{{ data.author }}</span>&nbsp;&nbsp;&nbsp;<span>{{ data.publishedAt | date:'medium' }}</span></p>
+        <div class="single-article">
+            <img [src]="data.urlToImage" alt="article Image" />
+        </div>
+        <p>{{ data.content }}</p>
+        <a [href]="data.url" target="_blank">Read more</a>
+    </div>
+</div>

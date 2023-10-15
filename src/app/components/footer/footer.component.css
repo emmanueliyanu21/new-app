@@ -1,0 +1,127 @@
+footer {
+    display: grid;
+    grid-template-columns: 40% 20% 20% 20%;
+    padding-block: 6rem;
+}
+
+.footer_main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer_main>img {
+    margin: 2rem 0rem;
+    width: 40%;
+}
+
+.footer_main p:first-of-type {
+    margin-bottom: 3rem;
+    max-width: 70%;
+}
+
+.footer_main>p {
+    columns: var(--clr-grey);
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+}
+
+.footer_section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer_section ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.footer_section ul li>a {
+    text-decoration: none;
+    color: var(--clr-grey);
+    font-size: 1.25rem;
+    line-height: 2rem;
+    font-weight: 400;
+}
+
+.footer_section ul li>a:hover {
+    color: var(--clr-blue);
+}
+
+.footer_section>h4 {
+    padding-bottom: 2rem;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    font-weight: 700;
+}
+
+.footer_section:nth-of-type(3) ul li:nth-of-type(2) {
+    display: flex;
+    align-items: center;
+    gap: 0.88rem;
+}
+
+.footer_section:nth-of-type(3) ul li:nth-of-type(2)>button {
+    background: var(--clr-blue);
+    border-radius: 7.5rem;
+    padding: 0.0625rem 0.875rem;
+    border: 0.1px solid var(--clr-blue);
+    font-size: 0.8125rem;
+    line-height: 1.75rem;
+    color: var(--clr-white);
+    font-weight: 700;
+    cursor: auto;
+}
+
+@media screen and (max-width: 1024px) {
+    footer {
+        grid-template-columns: 1fr;
+        row-gap: 3rem;
+        padding-block: 4rem;
+    }
+
+    .footer_main p:first-of-type {
+        margin-bottom: 2rem;
+    }
+
+    .footer_section ul li>a {
+        font-size: 1rem;
+        line-height: 1.75rem;
+    }
+
+    .footer_section>h4 {
+        padding-bottom: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.75rem;
+    }
+
+    .footer_section ul {
+        gap: 1.3rem;
+    }
+
+    .footer_main>p {
+        font-size: 0.85rem;
+        line-height: 1.5rem;
+    }
+
+    .footer_main>img,
+    .footer_main p:first-of-type {
+        margin-bottom: 1.5rem;
+    }
+
+    .footer_main p:first-of-type {
+        max-width: 45%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .footer_main p:first-of-type {
+        max-width: 90%;
+    }
+}

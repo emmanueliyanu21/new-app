@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-header">
+        <h4>{{ article.title | truncate: 65 }}</h4>
+    </div>
+    <img [src]="article.urlToImage" width="200" alt="">
+    <p>{{ article.author }}</p>
+    <p>{{ article.description | truncate: 120 }}</p>
+    <div class="card-action">
+        <span><a [routerLink]="['/article', article.title]">Read More</a></span>
+        <span (click)="toggleBookmark(article)">
+            <ng-container *ngIf="isArticleBookmarked(article); else notBookmarked">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M5 21V5q0-.825.588-1.413T7 3h10q.825 0 1.413.588T19 5v16l-7-3l-7 3Z" />
+                </svg>
+            </ng-container>
+            <ng-template #notBookmarked>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" d="M16 3H8a2 2 0 0 0-2 2v16l6-3l6 3V5a2 2 0 0 0-2-2Z" />
+                </svg>
+            </ng-template>
+        </span>
+    </div>
+</div>

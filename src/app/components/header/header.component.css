@@ -1,0 +1,121 @@
+.news-header {
+    background: url(../../../assets/images/background-breaking-news-important-news-headline-form-flashing-lights-police_74231-108.jpg);
+    padding: 50px 0 90px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0px;
+}
+
+#navContent img {
+    width: 60%;
+}
+
+#news-select {
+    min-width: 250px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border-radius: 5px;
+    font-family: 'Mukta', sans-serif;
+  }
+  
+  #news-select option {
+    font-size: 16px;
+    padding: 5px;
+  }
+
+.mobile_nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: var(--clr-white);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.mobile_nav>a {
+    color: var(--clr-black);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.mobile_nav a:nth-of-type(4) {
+    padding: 8px 40px;
+    background-color: var(--clr-red);
+    color: var(--clr-blue);
+    border: 2px solid var(--clr-red);
+    border-radius: 24px;
+}
+
+#closeNav {
+    color: var(--clr-black);
+    position: absolute;
+    top: 60px;
+    right: 25px;
+}
+
+#openNav {
+    display: none;
+    font-size: 24px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav li>a {
+    text-decoration: none;
+    color: var(--clr-white);
+    font-weight: 400;
+    border-radius: 50px;
+    padding: 3px 8px;
+}
+
+nav li>a:hover {
+    background-color: var(--clr-blue);
+    transition: background 0.5s linear;
+}
+
+nav li:nth-of-type(3)>a {
+    padding: 8px 40px;
+    background-color: var(--clr-blue);
+    color: var(--clr-white);
+    border: 2px solid var(--clr-blue);
+    border-radius: 24px;
+}
+
+nav li:nth-of-type(3)>a:hover {
+    background-color: var(--clr-red);
+    transition: background 0.5s linear;
+}
+
+@media screen and (max-width: 1024px) {
+    nav ul {
+        display: none;
+    }
+
+    #openNav {
+        display: block;
+    }
+}

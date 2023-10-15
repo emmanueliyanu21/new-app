@@ -1,0 +1,20 @@
+<div class="footer-wrapper">
+    <footer class="container">
+        <div class="footer_main">
+            <img src="../../../assets/images/news45.jpg" alt="" />
+            <p>{{ footer.text }}</p>
+            <p>{{ footer.caption }}</p>
+        </div>
+        <div class="footer_section" *ngFor="let item of footer?.data; let i = index">
+            <h4>{{ item.header }}</h4>
+            <ul>
+                <li *ngFor="let link of item?.links; let j = index">
+                    <a [routerLink]="[link?.url]">{{ link.name }}</a>
+                    <ng-container *ngIf="link?.name === 'Careers'">
+                        <button class="button-text">Hiring!</button>
+                    </ng-container>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</div>
