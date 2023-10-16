@@ -29,7 +29,6 @@ body {
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 15px;
 }
 
@@ -42,6 +41,12 @@ body {
     .main-wrapper {
         padding: 10px 10px !important;
     }
+    .card-details {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1400px) {
     .card-details {
         justify-content: center;
     }
