@@ -51,6 +51,7 @@ export class HeaderComponent {
     { name: 'Reuters', value: 'reuters' },
     { name: 'Bloomberg', value: 'bloomberg' },
   ]
+  
   selectedNews: string = '';
 
   selectNewsChannel(event: any) {
