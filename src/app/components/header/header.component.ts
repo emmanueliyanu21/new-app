@@ -13,7 +13,7 @@ interface selectedChannel {
 })
 
 export class HeaderComponent {
-  @Output() newFilterEvent = new EventEmitter<selectedChannel>();
+  @Output() newFilterEvent = new EventEmitter<string>();
 
   sideNavWidth: string = '0';
   selectNewsChannelForm: FormGroup;

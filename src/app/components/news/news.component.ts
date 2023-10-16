@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Article } from 'src/app/models/IArticle';
+import { NewsService } from 'src/app/service/news.service';
 
 @Component({
   selector: 'app-news',
@@ -14,28 +15,23 @@ export class NewsComponent {
   public articles: Article[] = []
   API_KEY = '81f11c094bbd48c4ae0796313e3bb0c2';
   public newsChannel: string =''
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private newsService: NewsService) {}
 
   ngOnInit() {
     this.getAPICall();
   }
 
-  getAPICall(){
-    this.http.get('https://newsapi.org/v2/top-headlines', {
-      params: {
-        sources: this.newsChannel ? this.newsChannel : 'bbc-news',
-        apiKey: this.API_KEY
-      }
-    }).subscribe((response: any) => {
+  getAPICall() {
+    this.isLoading = true;
+    this.newsService.getAPICall(this.newsChannel).subscribe((response: any) => {
       this.isLoading = false;
-      const { articles } = response;
-      this.articles = articles;
+      this.articles = response.articles;
       localStorage.setItem('articles', JSON.stringify(this.articles));
     });
   }
 
-  getFilterItem(event:any){
-    this.newsChannel = event;
-    this.getAPICall()
+  getFilterItem(selectedChannel: string) {
+    this.newsChannel = selectedChannel;
+    this.getAPICall();
   }
 }
